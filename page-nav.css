@@ -1,0 +1,6 @@
+.page-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:5px;margin:0 0 22px;pointer-events:auto;font:500 12px/1.4 "Geist",ui-sans-serif,sans-serif}
+.page-nav a{padding:8px 13px;border-radius:9px;text-decoration:none;color:#AEB7CC;border:1px solid transparent;transition:background .2s,color .2s}
+.page-nav a:hover{color:#EEF2FA;background:rgba(150,180,255,.08)}
+.page-nav a[aria-current="page"]{color:#CFF6FF;background:rgba(127,227,255,.06);border-color:rgba(127,227,255,.18)}
+.page-nav a:focus-visible{outline:2px solid #7FE3FF;outline-offset:3px}
+.page-nav--glance{justify-content:flex-start;margin-bottom:28px}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genspark · The evolution of agent collaboration</title>
+<meta name="description" content="From one person and one agent to full teams of people and AI agents working together in GenTeam.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="page-nav.css">
+<link rel="stylesheet" href="how-it-works.css">
+<link rel="stylesheet" href="collaboration.css">
+</head>
+<body class="how-page collaboration-page">
+<div class="how-stars" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<svg width="0" height="0" class="symbol-library" aria-hidden="true"><defs>
+  <symbol id="person" viewBox="0 0 56 70"><circle cx="28" cy="17" r="12"/><path d="M6 62c0-23 44-23 44 0"/></symbol>
+  <symbol id="agent" viewBox="0 0 48 48"><rect class="agent-face" x="3" y="3" width="42" height="42" rx="12"/><circle class="agent-eye" cx="17" cy="23" r="3"/><circle class="agent-eye" cx="31" cy="23" r="3"/></symbol>
+  <radialGradient id="team-aura"><stop stop-color="#FF8E72" stop-opacity=".2"/><stop offset="1" stop-color="#FF8E72" stop-opacity="0"/></radialGradient>
+</defs></svg>
+<main class="collaboration-shell">
+  <header class="collaboration-hero">
+    <nav class="page-nav" aria-label="Pages">
+      <a href="interactive-map.html">Interactive map</a>
+      <a href="at-a-glance.html">At a glance</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="collaboration.html" aria-current="page">Agent collaboration</a>
+      <a href="business.html">AI for business</a>
+    </nav>
+    <div class="eyebrow"><span class="dot"></span>Genspark · GenTeam</div>
+    <h1>The evolution of<br> agent collaboration</h1>
+    <p class="collaboration-lead">From a personal assistant to people and AI agents working as a team.</p>
+  </header>
+
+  <ol class="evolution" aria-label="Four stages of agent collaboration">
+    <li class="evolution-card">
+      <div class="stage-heading"><span>Stage 1</span><span class="stage-number" aria-hidden="true">01</span></div>
+      <svg class="stage-diagram" viewBox="0 0 300 260" role="img" aria-labelledby="stage-one-title">
+        <title id="stage-one-title">One person talking to one AI agent</title>
+        <path class="connection dashed" d="M85 142 174 117"/>
+        <use class="person" href="#person" x="38" y="112" width="56" height="70"/>
+        <path class="chat-bubble" d="M170 74h69a16 16 0 0 1 16 16v53a16 16 0 0 1-16 16h-38l-19 18v-18h-12a16 16 0 0 1-16-16V90a16 16 0 0 1 16-16Z"/>
+        <use class="agent" href="#agent" x="181" y="94" width="48" height="48"/>
+      </svg>
+      <div class="stage-copy"><h2>One person,<br> one agent</h2></div>
+    </li>
+
+    <li class="evolution-card">
+      <div class="stage-heading"><span>Stage 2</span><span class="stage-number" aria-hidden="true">02</span></div>
+      <svg class="stage-diagram" viewBox="0 0 300 260" role="img" aria-labelledby="stage-two-title">
+        <title id="stage-two-title">One person working separately with four AI agents</title>
+        <path class="connection" d="m67 55 83 80 83-80M67 212l83-77 83 77"/>
+        <use class="person" href="#person" x="122" y="105" width="56" height="70"/>
+        <use class="agent" href="#agent" x="43" y="31" width="48" height="48"/>
+        <use class="agent" href="#agent" x="209" y="31" width="48" height="48"/>
+        <use class="agent" href="#agent" x="43" y="188" width="48" height="48"/>
+        <use class="agent" href="#agent" x="209" y="188" width="48" height="48"/>
+      </svg>
+      <div class="stage-copy"><h2>One person,<br> many agents</h2></div>
+    </li>
+
+    <li class="evolution-card connected-card">
+      <div class="stage-heading"><span>Stage 3</span><span class="stage-number" aria-hidden="true">03</span></div>
+      <svg class="stage-diagram" viewBox="0 0 300 260" role="img" aria-labelledby="stage-three-title">
+        <title id="stage-three-title">One person with four agents connected to each other</title>
+        <path class="connection" d="m67 55 83 80 83-80M67 212l83-77 83 77"/>
+        <path class="connection agent-network" d="M67 55h166v157H67Z"/>
+        <use class="person" href="#person" x="122" y="105" width="56" height="70"/>
+        <use class="agent" href="#agent" x="43" y="31" width="48" height="48"/>
+        <use class="agent" href="#agent" x="209" y="31" width="48" height="48"/>
+        <use class="agent" href="#agent" x="43" y="188" width="48" height="48"/>
+        <use class="agent" href="#agent" x="209" y="188" width="48" height="48"/>
+      </svg>
+      <div class="stage-copy"><h2>One person,<br> many agents<br> that collaborate</h2></div>
+    </li>
+
+    <li class="evolution-card team-card">
+      <div class="stage-heading"><span>Stage 4</span><span class="now-badge">Now</span></div>
+      <svg class="stage-diagram" viewBox="0 0 300 260" role="img" aria-labelledby="stage-four-title">
+        <title id="stage-four-title">A shared workspace connecting a full team of people and AI agents</title>
+        <circle cx="150" cy="130" r="145" fill="url(#team-aura)"/>
+        <rect class="workspace-boundary" x="8" y="8" width="284" height="244" rx="25"/>
+        <path class="connection team-network" d="M63 82 139 45 218 80 139 142 63 82v98l76-38v75l79-32V80M63 82l155-2M139 45v97l79 43-155-5 76 37M139 142l123-9"/>
+        <use class="person" href="#person" x="39" y="62" width="48" height="60"/>
+        <use class="person" href="#person" x="115" y="25" width="48" height="60"/>
+        <use class="person" href="#person" x="39" y="160" width="48" height="60"/>
+        <use class="person" href="#person" x="115" y="197" width="48" height="50"/>
+        <use class="agent" href="#agent" x="198" y="60" width="40" height="40"/>
+        <use class="agent central-agent" href="#agent" x="119" y="122" width="40" height="40"/>
+        <use class="agent" href="#agent" x="198" y="165" width="40" height="40"/>
+        <use class="agent" href="#agent" x="247" y="118" width="30" height="30"/>
+      </svg>
+      <div class="stage-copy"><h2>A full team of people and a full team of agents, all collaborating</h2></div>
+      <div class="team-signature"><span class="signature-dot"></span>GenTeam<span>People + agents + shared work</span></div>
+    </li>
+  </ol>
+
+  <footer class="collaboration-footer">
+    <span>© 2026 Genspark. All rights reserved.</span>
+    <a href="interactive-map.html">Explore what you can do <span aria-hidden="true">↗</span></a>
+  </footer>
+</main>
+</body>
+</html>

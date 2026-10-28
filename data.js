@@ -1,0 +1,105 @@
+// Customer-facing use cases shared by the interactive and at-a-glance pages.
+// Official competitor logo files (optional): add e.g. "Canva": "logos/canva.svg".
+// Any competitor without a file shows a neutral monogram token.
+window.GT_LOGOS = { "Gamma": "logos/gamma.png" };
+window.GT_DATA = {
+  title: "Start with a task. Keep working together.",
+  subtitle: "Solve your task. Connect your team. Continue the work.",
+  center: {
+    name: "GenTeam",
+    label: "People + agents + shared work",
+    halo: "SecondBrain · keep your work in context."
+  },
+  categories: [
+    { id: 1, short: "Presentations", name: "AI Presentations", icon: "presentation", handoff: "A teammate sharpens the story; an agent checks the sources.",
+      job: "Turn my material into a persuasive deck.",
+      desc: "Turn ideas and source material into a polished, persuasive deck without hours of writing and formatting.",
+      competitors: ["Gamma", "Canva", "Manus", "PowerPoint Copilot"],
+      example: "Share the draft deck into a GenTeam space where a teammate sharpens the narrative and a research agent checks every cited source before the pitch." },
+    { id: 2, short: "Design & Visuals", name: "AI Design & Visual Content", icon: "layers", handoff: "A teammate approves the hero; an agent resizes it for every channel.",
+      job: "Create visuals I can share with confidence.",
+      desc: "Create professional graphics, branded assets, and marketing materials without needing a designer for every request.",
+      competitors: ["Canva", "Adobe Express", "Higgsfield"],
+      example: "Hand the campaign brief to GenTeam: a teammate approves the hero asset while an agent produces the resized versions for each channel." },
+    { id: 3, short: "Video & Media", name: "AI Video & Media Production", icon: "video", handoff: "Reviewers comment in one thread; an agent prepares localized cuts.",
+      job: "Produce the video without a production team.",
+      desc: "Produce videos, ads, and multimedia content without a traditional production team or complex toolchain.",
+      competitors: ["Higgsfield", "Runway", "Synthesia", "Canva"],
+      example: "Move the rough cut into GenTeam, where reviewers leave notes in one thread and an agent prepares the localized versions." },
+    { id: 4, short: "App & Web Builders", name: "AI App & Website Builders", icon: "browser", handoff: "Teammates gather feedback; a coding agent picks up the changes.",
+      job: "Build my idea.",
+      desc: "Turn an idea into a working application or website without assembling a development team.",
+      competitors: ["Lovable", "Base44", "Replit", "Manus"],
+      distinction: "App builders solve “Build my idea.” Coding agents solve “Help me change this codebase.”",
+      example: "Bring the working prototype into GenTeam so teammates collect feedback in one place and a coding agent picks up the follow-up changes." },
+    { id: 5, short: "Coding Agents", name: "AI Coding Agents", icon: "terminal", handoff: "The product lead reviews in context; an agent drafts release notes.",
+      job: "Help me change this codebase.",
+      desc: "Help developers implement, debug, test, and maintain software in existing codebases.",
+      competitors: ["Claude Code", "Codex", "Cursor", "Replit"],
+      distinction: "Coding agents solve “Help me change this codebase.” App builders solve “Build my idea.”",
+      example: "Post the merged change into GenTeam so the product lead reviews it in context and an agent drafts the release note for the team." },
+    { id: 6, short: "Research & Analysis", name: "AI Research & Analysis", icon: "research", handoff: "Colleagues challenge the conclusions; an agent builds the briefing.",
+      job: "Find the answer and support it.",
+      desc: "Find answers, investigate topics, and turn sources or data into supported conclusions.",
+      competitors: ["Perplexity", "Manus", "ChatGPT", "Claude", "Gemini"],
+      example: "Turn the findings into a shared GenTeam thread where colleagues challenge the conclusions and an agent builds the briefing deck." },
+    { id: 7, short: "Writing & Email", name: "AI Writing & Email Productivity", icon: "mail", handoff: "Teammates weigh in; an agent drafts one coordinated reply.",
+      job: "Help me say it clearly and keep up.",
+      desc: "Communicate clearly, draft and edit faster, and keep up with email and follow-ups.",
+      competitors: ["Grammarly", "Superhuman Mail", "Superhuman Go", "Microsoft Copilot"],
+      example: "Escalate a customer email thread into GenTeam so the right teammates weigh in and an agent drafts one coordinated reply." },
+    { id: 8, short: "Dictation & Voice", name: "AI Dictation & Voice Input", icon: "mic", handoff: "A spoken request becomes an agent task, with teammates in the loop.",
+      job: "Let me speak instead of type.",
+      desc: "Turn spoken thoughts into polished text and instructions wherever you work.",
+      competitors: ["Wispr Flow", "Speechify"],
+      example: "Speak a request that becomes a GenTeam task assigned to an agent, with the relevant teammates kept in the loop." },
+    { id: 9, short: "Reading & Listening", name: "AI Reading & Listening", icon: "headphones", handoff: "The team discusses highlights; an agent extracts action items.",
+      job: "Let me listen instead of read.",
+      desc: "Consume documents, articles, and other information through audio rather than reading everything on screen.",
+      competitors: ["Speechify", "ElevenReader", "NotebookLM"],
+      candidate: true,
+      statusLabel: "Exploring this use case",
+      statusNote: "This is a possible workflow, not a confirmed Genspark capability.",
+      example: "Share highlights from a report you listened to into GenTeam, where the team discusses it and an agent extracts the action items." },
+    { id: 10, short: "Meeting Memory", name: "AI Meeting Notes & Conversation Memory", icon: "meeting", handoff: "Decisions become tasks owned by people and agents.",
+      job: "Remember what we discussed and decided.",
+      desc: "Capture conversations, retrieve what was discussed, and preserve decisions and commitments without taking notes manually.",
+      competitors: ["Granola", "Fireflies", "Plaud", "Otter"],
+      example: "Decisions and commitments from the call become GenTeam tasks owned by people and agents, with the conversation kept in SecondBrain." },
+    { id: 11, short: "Task Automation", name: "AI Task Automation", icon: "bolt", handoff: "Teammates review, approve, and assign the next step.",
+      job: "Complete this assignment.",
+      desc: "Delegate a multi-step assignment and receive a completed result instead of instructions for doing it yourself.",
+      competitors: ["Manus", "ChatGPT agent experiences", "Claude Cowork", "Superhuman Go"],
+      distinction: "Task automation solves “Complete this assignment.” Persistent assistants solve “Take ongoing responsibility for this area of work.”",
+      example: "The completed result lands in a GenTeam space where teammates review it, approve it, and assign the next step." },
+    { id: 12, short: "Assistants & Teammates", name: "AI Personal Assistants & Teammates", icon: "teammate", handoff: "Your assistant joins GenTeam and coordinates with the team.",
+      job: "Take ongoing responsibility for this area of work.",
+      desc: "Work with an ongoing assistant that remembers context, handles recurring responsibilities, and coordinates with you and others.",
+      competitors: ["Grok Bot", "Instinct", "Hermes", "Muse", "Claude", "ChatGPT"],
+      distinction: "Persistent assistants solve “Take ongoing responsibility for this area of work.” Task automation solves “Complete this assignment.”",
+      direct: true,
+      example: "Your assistant joins GenTeam as a teammate, coordinating recurring work with colleagues and other agents in the same space." }
+  ],
+  // Faint category-to-category links: potential workflow relationships (not integrations)
+  crossLinks: [[1,2],[2,3],[4,5],[6,7],[7,8],[8,9],[6,9],[7,10],[10,11],[11,12],[10,12]],
+  journey: {
+    intro: "Come to Genspark with a specific problem. Solve the task, then bring your team and AI agents together in GenTeam to continue the work.",
+    context: "SecondBrain keeps relevant context with your work, so you can pick up where you left off.",
+    steps: [
+      { k: "Solve your task", t: "Start with what you need: a presentation, a video, a code change, or a meeting recap." },
+      { k: "Connect your team", t: "Bring the work into GenTeam to share feedback and work with people and AI agents." },
+      { k: "Continue the work", t: "Keep the relevant context in SecondBrain as you move from the first result to the next step." }
+    ],
+    notes: [
+      "Start with the job you need to do, whether you are working on your own or with a team.",
+      "Use an app builder to turn an idea into a prototype, or a coding agent to work on an existing codebase.",
+      "Delegate a specific assignment to an agent, or work with an assistant on recurring responsibilities.",
+      "Bring results, feedback, and next steps together in GenTeam, with relevant context in SecondBrain."
+    ]
+  },
+  context: [
+    { k: "AI assistants", items: ["Claude", "ChatGPT", "Copilot", "Gemini"] },
+    { k: "Team communication", items: ["Slack", "Microsoft Teams"] },
+    { k: "Work and knowledge tools", items: ["monday.com", "Asana", "Notion", "Airtable"] }
+  ]
+};

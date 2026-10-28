@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genspark · How it works</title>
+<meta name="description" content="See how Genspark breaks your request into tasks, coordinates AI agents and models, and brings the results together.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="page-nav.css">
+<link rel="stylesheet" href="how-it-works.css">
+<script src="how-it-works.js" defer></script>
+</head>
+<body class="how-page">
+<div class="how-stars" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="icon-request" viewBox="0 0 24 24"><path d="M5 4h14v12H9l-4 4V4Z"/><path d="M9 8h6M9 12h4"/></symbol>
+  <symbol id="icon-plan" viewBox="0 0 24 24"><path d="M19 9a7 7 0 0 0-12-4L4 8m0-5v5h5M5 15a7 7 0 0 0 12 4l3-3m0 5v-5h-5"/></symbol>
+  <symbol id="icon-agent" viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="13" rx="4"/><path d="M12 3v4M2 12v4m20-4v4M9 16h6"/><path d="M9 11v1m6-1v1"/></symbol>
+  <symbol id="icon-model" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+  <symbol id="icon-verify" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="icon-answer" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6V3Zm8 0v5h5M9 12h7M9 16h5"/></symbol>
+  <symbol id="icon-log" viewBox="0 0 24 24"><path d="M8 5h12M8 12h12M8 19h12M3 5h1M3 12h1M3 19h1"/></symbol>
+</defs></svg>
+<main class="how-shell">
+  <header class="how-hero">
+    <nav class="page-nav" aria-label="Pages">
+      <a href="interactive-map.html">Interactive map</a>
+      <a href="at-a-glance.html">At a glance</a>
+      <a href="how-it-works.html" aria-current="page">How it works</a>
+      <a href="collaboration.html">Agent collaboration</a>
+      <a href="business.html">AI for business</a>
+    </nav>
+    <div class="eyebrow"><span class="dot"></span>Genspark · How it works</div>
+    <h1>One request. AI agents work together.<br class="desktop-break"> A result you can build on.</h1>
+  </header>
+
+  <section class="workflow" aria-label="From your request to an answer, with an activity log of the steps">
+    <svg class="workflow-links" aria-hidden="true"><defs>
+      <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 8 4-8 4" fill="none" stroke="#7FE3FF" stroke-width="1.5"/></marker>
+    </defs><g id="flow-paths"></g><g id="audit-paths"></g></svg>
+
+    <div class="flow-step request-step">
+      <span class="step-label">01 / Input</span>
+      <article class="flow-card" id="request">
+        <span class="flow-icon"><svg aria-hidden="true"><use href="#icon-request"/></svg></span>
+        <h2>Your request</h2>
+      </article>
+    </div>
+    <div class="flow-step planning-step">
+      <span class="step-label">02 / Plan</span>
+      <article class="flow-card planning-card" id="planning">
+        <span class="flow-icon"><svg aria-hidden="true"><use href="#icon-plan"/></svg></span>
+        <h2>Plan the work</h2>
+        <p>Break your task<br> into steps</p>
+        <span class="loop-label">↻ Refine</span>
+      </article>
+    </div>
+
+    <div class="parallel-work">
+      <h2 class="step-label agent-heading">03 / Work in parallel</h2>
+      <h2 class="step-label model-heading">04 / Use AI models</h2>
+      <article class="flow-card agent-card" id="agent-a"><span class="flow-icon"><svg aria-hidden="true"><use href="#icon-agent"/></svg></span><h3>AI agent</h3><span class="branch-label">A</span></article>
+      <article class="flow-card model-card" id="model-a"><svg class="model-icon" aria-hidden="true"><use href="#icon-model"/></svg><h3>AI model A</h3></article>
+      <article class="flow-card agent-card" id="agent-b"><span class="flow-icon"><svg aria-hidden="true"><use href="#icon-agent"/></svg></span><h3>AI agent</h3><span class="branch-label">B</span></article>
+      <article class="flow-card model-card" id="model-b"><svg class="model-icon" aria-hidden="true"><use href="#icon-model"/></svg><h3>AI model B</h3></article>
+      <article class="flow-card agent-card" id="agent-c"><span class="flow-icon"><svg aria-hidden="true"><use href="#icon-agent"/></svg></span><h3>AI agent</h3><span class="branch-label">C</span></article>
+      <article class="flow-card model-card" id="model-c"><svg class="model-icon" aria-hidden="true"><use href="#icon-model"/></svg><h3>AI model C</h3></article>
+    </div>
+
+    <div class="flow-step verification-step">
+      <span class="step-label">05 / Verify</span>
+      <article class="flow-card" id="verification">
+        <span class="flow-icon"><svg aria-hidden="true"><use href="#icon-verify"/></svg></span>
+        <h2>Combine and<br> check results</h2>
+      </article>
+    </div>
+    <div class="flow-step answer-step">
+      <span class="step-label">06 / Output</span>
+      <article class="flow-card answer-card" id="answer">
+        <span class="flow-icon"><svg aria-hidden="true"><use href="#icon-answer"/></svg></span>
+        <h2>Answer with<br> sources</h2>
+      </article>
+    </div>
+
+    <div class="audit-log" id="audit-log">
+      <span class="audit-icon"><svg aria-hidden="true"><use href="#icon-log"/></svg></span>
+      <span>Activity log</span><span class="audit-description">The steps behind the result</span>
+    </div>
+  </section>
+
+  <footer class="how-footer">
+    <div class="closing-mark" aria-hidden="true"></div>
+    <p>Start with your question or task.<br><span>Use the result to take the next step.</span></p>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause pulses</button>
+  </footer>
+</main>
+</body>
+</html>

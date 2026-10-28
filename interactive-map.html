@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genspark · Explore what you can do</title>
+<meta name="description" content="Explore ways to create, research, and get work done with Genspark, then continue with your team and AI agents in GenTeam.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="page-nav.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gtIconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9FF0FF"/><stop offset="1" stop-color="#B9A2FF"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="hero">
+  <nav class="page-nav" aria-label="Pages">
+    <a href="interactive-map.html" aria-current="page">Interactive map</a>
+    <a href="at-a-glance.html">At a glance</a>
+    <a href="how-it-works.html">How it works</a>
+    <a href="collaboration.html">Agent collaboration</a>
+    <a href="business.html">AI for business</a>
+  </nav>
+  <div class="eyebrow"><span class="dot"></span>Genspark · Explore what you can do</div>
+  <h1 id="title"></h1>
+  <p id="subtitle" class="sub"></p>
+</header>
+
+<main id="viewport" class="viewport" aria-label="Interactive use-case map. Use Tab to move between categories; Enter opens details.">
+  <div id="world" class="world">
+    <svg id="links" class="links" aria-hidden="true">
+      <defs>
+        <linearGradient id="spokeGrad" gradientUnits="userSpaceOnUse"></linearGradient>
+        <radialGradient id="nucleusGrad" cx="50%" cy="45%" r="60%">
+          <stop offset="0" stop-color="#FFF8F2"/>
+          <stop offset=".35" stop-color="#FFD9C6"/>
+          <stop offset=".75" stop-color="#FF8E72"/>
+          <stop offset="1" stop-color="#E25C4A"/>
+        </radialGradient>
+        <radialGradient id="auraGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#FF9C80" stop-opacity=".42"/>
+          <stop offset=".45" stop-color="#FF7A66" stop-opacity=".12"/>
+          <stop offset="1" stop-color="#FF7A66" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="haloGrad" cx="50%" cy="50%" r="50%">
+          <stop offset=".6" stop-color="#7FE3FF" stop-opacity="0"/>
+          <stop offset=".86" stop-color="#9C8CFF" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#9C8CFF" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3.2" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
+        <path id="haloPath"/>
+      </defs>
+      <g id="orbitG"></g>
+      <g id="crossG"></g>
+      <g id="spokeG"></g>
+      <g id="pulseG"></g>
+      <g id="nucleusG"></g>
+    </svg>
+    <div id="nodes"></div>
+    <button id="core" class="core" aria-label="GenTeam. Explore your shared workspace">
+      <span class="core-name">GenTeam</span>
+      <span class="core-label"></span>
+    </button>
+  </div>
+  <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+</main>
+
+<footer class="foot">
+  <p class="disclaimer">Explore example workflows. Connections show possible next steps, not product integrations or live activity.</p>
+</footer>
+
+<nav class="controls" aria-label="Graph controls">
+  <button id="btnPlay" class="ctl" aria-label="Pause animation" title="Pause / play pulses">
+    <svg viewBox="0 0 24 24" class="i-pause"><path d="M8 5v14M16 5v14"/></svg>
+    <svg viewBox="0 0 24 24" class="i-play"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+  </button>
+  <span class="sep"></span>
+  <button id="btnOut" class="ctl" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+  <button id="btnIn" class="ctl" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+  <button id="btnFit" class="ctl" aria-label="Fit and reset view" title="Fit / reset"><svg viewBox="0 0 24 24"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></svg></button>
+  <span class="sep"></span>
+  <button id="btnList" class="ctl txt" aria-expanded="false" aria-controls="listSheet">All 12</button>
+  <button id="btnCtx" class="ctl txt" aria-expanded="false" aria-controls="ctxPanel">Related tools</button>
+</nav>
+
+<aside id="panel" class="panel" aria-hidden="true" aria-labelledby="pTitle" tabindex="-1">
+  <button class="close" id="panelClose" aria-label="Close details"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div id="panelBody"></div>
+</aside>
+
+<aside id="ctxPanel" class="ctx" aria-hidden="true" aria-label="Related tools">
+  <div class="ctx-head">
+    <span class="kicker">Tools you may know</span>
+    <button class="close sm" id="ctxClose" aria-label="Close related tools"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div id="ctxBody"></div>
+  <p class="fine">Third-party examples help explain the categories. Listing a tool does not imply an integration, partnership, or equivalent capabilities.</p>
+</aside>
+
+<aside id="listSheet" class="sheet" aria-hidden="true" aria-label="All categories">
+  <div class="ctx-head">
+    <span class="kicker">Explore 12 use cases</span>
+    <button class="close sm" id="listClose" aria-label="Close category list"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <ol id="listBody"></ol>
+</aside>
+
+<script src="data.js"></script>
+<script src="icons.js"></script>
+<script src="orbit.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
